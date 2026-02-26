@@ -1,0 +1,4 @@
+vendor/
+src/Config/config.php
+.idea
+public/assets/bootstrap

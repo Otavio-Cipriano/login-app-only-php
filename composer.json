@@ -1,0 +1,24 @@
+{
+    "name": "cipriano/login-screen",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Otavio-Cipriano",
+            "email": "otavio.b.cipriano@gmail.com"
+        }
+    ],
+    "require": {
+        "twbs/bootstrap": "5.3",
+      "ext-pdo": "*"
+    },
+    "scripts": {
+        "copy-bootstrap": "php scripts/copy-bootstrap.php",
+        "post-install-cmd": [
+            "@copy-bootstrap"
+        ]
+    }
+}
