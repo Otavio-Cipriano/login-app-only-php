@@ -49,5 +49,7 @@ Decidi usar PHP puro para entender o fluxo completo:
 
 1. Clonar o repositório
 2. Configurar banco de dados
-3. Rodar servidor PHP: php -S localhost:8000
-4. Acessar no navegador
+3. Instalar os pacotes com composer
+4. Rodar o `composer copy-bootstrap`
+5. Rodar servidor PHP: php -S localhost:8000
+6. Acessar no navegador
