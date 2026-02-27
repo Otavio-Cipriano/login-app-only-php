@@ -24,11 +24,16 @@ class UserRepository
         return new User($user['id'], $user['email'], $user['password'], $user['name']);
     }
 
-    public function createUser($name, $email, $pass)
+    public function createUser($name, $email, $pass): ?User
     {
-        $stmt = $this->conn->prepare('insert into users (name, email, pass) value (:name, :email, :pass)');
-        $stmt->execute(['name'=> $name, 'email' => $email, 'pass' => $pass]);
+        $stmt = $this->conn->prepare('insert into users (name, email, password) value (:name, :email, :password)');
+        $stmt->execute(['name'=> $name, 'email' => $email, 'password' => $pass]);
+        $id = $this->conn->lastInsertId();
 
+        if($stmt->rowCount() > 0){
+            return new User($id, $email, $pass, $name);
+        }
 
+        return null;
     }
 }

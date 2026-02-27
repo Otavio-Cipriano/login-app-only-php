@@ -16,6 +16,7 @@ $routes = [
         'GET' => [AuthController::class, 'logout']
     ],
     '/signin' => [
-        'GET' => [RegisterController::class, 'index']
+        'GET' => [RegisterController::class, 'index'],
+        'POST' => [RegisterController::class, 'signin']
     ]
 ];
